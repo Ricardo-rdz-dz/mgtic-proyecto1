@@ -1,0 +1,14 @@
+.project-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+   
+}
+
+.project-img{
+ border: 5px solid orange;
+}
+
+.project-text{
+    
+}

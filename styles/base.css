@@ -1,0 +1,52 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    font-family: Arial;
+    background-color: black;
+    color: white;
+}
+p{
+    line-height: 2;
+}
+h1,h2{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+a{
+    text-decoration: none;
+    color: gray;
+}
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.btn{
+    border: 1px solid white;
+    margin: 10px auto;
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: orange;
+    color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+   
