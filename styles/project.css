@@ -1,6 +1,6 @@
 
 .project-container{
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
    
