@@ -1,3 +1,4 @@
+
 .project-container{
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -11,4 +12,13 @@
 
 .project-text{
     
+}
+
+
+.project-img2{
+    border:4px solid orange;
+}
+
+.project-img3{
+    border:4px solid orange;
 }
