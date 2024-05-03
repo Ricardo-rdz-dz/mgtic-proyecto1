@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de un alumno</title>
+    <link rel="stylesheet" href="./styles/registrocss.css">
+
 </head>
 <body>
-
-
+    <div class="barra-menu">
+    </div>
     <header>
-        <nav>
-         <div class="barra-menu">
+            
     <h1>Sistema de Registros</h1>
-    
-    
      <h4>Registra un alumno nuevo</h4>
          
-        </nav>
-      </div>
       </Header>
       <main class="container">
         <div>
@@ -30,28 +27,37 @@
         </div>
         <div>
             <label> Genero </label>
-            <input type="text">
+            <input type="textGenero">
             </div>
             <div>
                 <label> Correo</label>
-                <input type="text">
+                <input type="textCorreo">
                 </div>
                 <div>
                     <label> Contraseña </label>
-                    <input type="text">
+                    <input type="textPassword">
                     </div>
                     <div>
                         <label> Materia 1 </label>
-                        <input type="text">
+                        <input type="textMateria1">
                         </div>
                         <div>
                             <label> Materia 2 </label>
-                            <input type="text">
+                            <input type="textMateria2">
                             </div>
                             <div>
                                 <label> Materia 3 </label>
-                                <input type="text">
+                                <input type="textMateria3">
                                 </div>
+                                <div>
+                                    <label for="opciones">Selecciona una opción:</label>
+                                    <select id="Facultad" name="opcion">
+                                        <option value="opcion1">Facultad Ciencias Administrativas</option>
+                                        <option value="opcion2">Facultad de Ingenieria</option>
+                                        <option value="opcion3">Facultad de Idiomas</option>
+                                        <option value="opcion4">Facultad de Odonotologia</option>
+                                      </select>
+                                    </div>
                                
 
 
