@@ -22,11 +22,41 @@ function esValido(unAlumno){
     let validacion = true;
 
       if(unAlumno.nombre==""){
-        validacion = false;
+        alert("Por favor, completa el campo de Nombre.");
+        return false;
       }
       if(unAlumno.edad==""){
-        validacion = false;
+        alert("Por favor, completa el campo de Edad.");
+        return false;
       }
+      if(unAlumno.genero==""){
+        alert("Por favor, completa el campo de Genero.");
+        return false;
+      }
+        if(unAlumno.correo==""){
+          alert("Por favor, completa el campo de Correo.");
+          return false;
+        }
+          if(unAlumno.password==""){
+            alert("Por favor, completa el campo de Password.");
+            return false;
+          }
+          if(unAlumno.materia1==""){
+            alert("Por favor, completa el campo de Materia 1.");
+            return false;
+          }
+          if(unAlumno.materia2==""){
+            alert("Por favor, completa el campo de Materia 2.");
+            return false;
+          }
+          if(unAlumno.materia3==""){
+            alert("Por favor, completa el campo de Materia 3.");
+            return false;
+          }
+          if(unAlumno.facultad==""){
+            alert("Por favor, selecciona una Facultad de la lista.");
+            return false;
+          }
 
     return validacion;
 
@@ -45,9 +75,9 @@ function register(){
     let inputMateria1 = document.getElementById("txtMateria1").value;
     let inputMateria2 = document.getElementById("txtMateria2").value;
     let inputMateria3 = document.getElementById("txtMateria3").value;
-    let inputFacultad = document.getElementById("txtFacultad").value;
+    let inputFacultad = document.getElementById("Facultad").value;
     
-    let nuevoAlumno = new Estudiante(inputNombre, inputEdad, inputCorreo, inputGenero, inputPassword, inputMateria1, inputMateria2, inputMateria3, inputFacultad);
+    let nuevoAlumno = new Estudiante(inputNombre, inputEdad, inputGenero, inputCorreo, inputPassword, inputMateria1, inputMateria2, inputMateria3, inputFacultad);
     if(esValido(nuevoAlumno)){
         estudiantes.push(nuevoAlumno);
     console.log(estudiantes);
