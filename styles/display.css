@@ -1,0 +1,11 @@
+#listaEstudiantes {
+    background-color: #f8f9fa; /* Un fondo gris claro para el contenedor */
+    padding: 20px; /* Relleno para separar visualmente el contenido del borde */
+}
+
+.estudiante {
+    background-color: magenta; /* Color de fondo muy visible */
+    border: 5px solid yellow; /* Borde destacado */
+    color: white; /* Texto en color contrastante */
+    padding: 20px; /* Más relleno para hacer el bloque más grande */
+}

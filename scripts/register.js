@@ -78,12 +78,12 @@ function register(){
     let inputFacultad = document.getElementById("Facultad").value;
     
     let nuevoAlumno = new Estudiante(inputNombre, inputEdad, inputGenero, inputCorreo, inputPassword, inputMateria1, inputMateria2, inputMateria3, inputFacultad);
-    if(esValido(nuevoAlumno)){
-        estudiantes.push(nuevoAlumno);
-    console.log(estudiantes);
-
-    } else 
-    alert("por favor de completar los campos para el registro")
+    if (esValido(nuevoAlumno)) {
+      estudiantes.push(nuevoAlumno);
+      displayCards(); // Llama a esta función para actualizar la visualización de los estudiantes.
+  } else {
+      alert("Por favor, completa todos los campos para el registro.");
+  }
 
 
 }
