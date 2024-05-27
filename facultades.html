@@ -1,54 +1,58 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Facultades</title>
-    <link rel="stylesheet" href="./styles/registrocss.css">
-  
+    <link rel="stylesheet" href="./styles/facultades.css">
 </head>
-
-
 <body>
-    <h1>Registro de Facultades</h1>
-    <h4>Por favor, escribe tu facultad y tu campus</h4>
-        
-     </Header>
-     <main class="container">
-       <div>
-       <label>Facultad </label>
-       <input type="text" id="txtNombref">
-       </div>
-       <div>
-       <label> Campus </label>
-       <input type="text" id="txtCampus">
-       </div>
-       <div>
-
-        <button onclick="register()"> Registrar</button>
-
-        <script src="./scripts/facultades.js"></script>
-
-
-        
-    
+    <header>
+        <div class="barra-menu">
+            <h1>Sistema de Registros</h1>
+            <nav class="menu">
+                <a href="index.html">Inicio</a>
+                <a href="registro.html">Registro</a>
+                <a href="facultades.html">Registrar Facultad</a>
+                <a href="projects.html">Proyectos</a>
+                <a href="articulos.html">Artículos</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="usuarios.html">Usuarios</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <h1>Registro de Facultades</h1>
+        <h4>Por favor, escribe tu facultad y tu campus</h4>
+        <div class="form-container">
+            <div>
+                <label>Facultad</label>
+                <input type="text" id="txtNombref">
+            </div>
+            <div>
+                <label>Campus</label>
+                <input type="text" id="txtCampus">
+            </div>
+            <button onclick="registerFacultad()">Registrar</button>
+        </div>
+        <div id="listaFacultades" class="lista-facultades-container">
+            <table id="tablaFacultades">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre de la Facultad</th>
+                        <th>Campus</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán los registros dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./scripts/registroFacultad.js"></script>
 </body>
-
-<nav>
-    <div class="barra-menu">
-<h1>Regresar a: </h1>
-
-
-<nav class="menu">
- <a href="home.html">Inicio</a>
- <a href="registro.html">Registro</a>
- <a href="facultades.html">Registrar Facultad</a>
- <a href="projects.html">Proyectos</a>
- <a href="articles.html">Articulos</a>
- <a href="contacto.html">Contacto</a>
-</nav>
-    
-   </nav>
-
-
-
 </html>

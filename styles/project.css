@@ -1,24 +1,176 @@
+/* Estilo base para el cuerpo */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
 
-.project-container{
+/* Estilo para el contenedor de proyectos */
+.project-container {
     display: flex;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 20px;
-   
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
 }
 
-.project-img{
- border: 5px solid orange;
+/* Estilo para cada proyecto individual */
+.project {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: fit-content; /* Ajusta la altura según el contenido */
 }
 
-.project-text{
-    
+.project:hover {
+    transform: translateY(-5px);
 }
 
-
-.project-img2{
-    border:4px solid orange;
+/* Estilo para las imágenes de los proyectos */
+.project-img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid orange;
 }
 
-.project-img3{
-    border:4px solid orange;
+/* Estilo para el texto de los proyectos */
+.project-text {
+    padding: 20px;
+}
+
+.project-text h3 {
+    font-size: 1.5em;
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+.project-text p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Base styles for the page */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+header {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.barra-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.barra-menu h1 {
+    font-size: 1.5em;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1em;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.project-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+/* Estilo para cada proyecto individual */
+.project {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1 1 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 30%;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilo para las imágenes de los proyectos */
+.project-img img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid orange;
+}
+
+/* Estilo para el texto de los proyectos */
+.project-text {
+    padding: 20px;
+}
+
+.project-text h3 {
+    font-size: 1.5em;
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+.project-text p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+footer {
+    background-color: #0073e6;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
 }

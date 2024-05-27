@@ -1,30 +1,79 @@
-.barra-menu{
+/* Base styles for the page */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+header {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.barra-menu {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.barra-menu h1{
-    font-size: 30px;
-    text-transform: uppercase;
-    font-weight: 300;
-    letter-spacing: 3px;
-
+.barra-menu h1 {
+    font-size: 1.5em;
 }
 
-.menu a{
-    margin-right: 20px;
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1em;
 }
 
-.menu a:hover{
-    color: orange;
+.menu a:hover {
     text-decoration: underline;
 }
 
-img.estudiante{
-    display: block;
-    width: 25%;
-    margin-left: auto;
-    margin-right: auto;
+.container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.estudiante {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #0073e6;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 20px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #01105b;
+}
+
+footer {
+    background-color: #0073e6;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
 }

@@ -1,46 +1,50 @@
 $(document).ready(function() {
-    function displayCards(estudiantes) {
-        let card = ""; 
-        for (let i = 0; i < estudiantes.length; i++) {
-            let estudiante = estudiantes[i]; 
-            card += `
-            <div>
-                <h2>${estudiante.nombre}</h2> 
-                <p>Edad: ${estudiante.edad}</p> 
-                <p>Género: ${estudiante.genero}</p> 
-                <p>Correo: ${estudiante.correo}</p> 
-                <p>Materias: ${estudiante.materia1}, ${estudiante.materia2}, ${estudiante.materia3}</p> 
-                <p>Facultad: ${estudiante.facultad}</p> 
-            </div>
-            `;
-        }
-        document.getElementById("listaEstudiantes").innerHTML = card; 
-    }
+    cargarEstudiantes();
+});
 
-    function searchToDataBase() {
+function cargarEstudiantes() {
+    $.ajax({
+        url: './app/get_students.php',
+        method: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            const tableBody = $('#tablaEstudiantes tbody');
+            tableBody.empty(); // Limpiar el contenido anterior
+            response.forEach(estudiante => {
+                const row = `
+                    <tr>
+                        <td>${estudiante.nombre}</td>
+                        <td>${estudiante.edad}</td>
+                        <td>${estudiante.genero}</td>
+                        <td>${estudiante.correo}</td>
+                        <td>${estudiante.facultad}</td>
+                        <td><button class="eliminar-btn" onclick="eliminarRegistro(${estudiante.id})">Eliminar</button></td>
+                    </tr>
+                `;
+                tableBody.append(row);
+            });
+        },
+        error: function(xhr, status, error) {
+            console.log("Error al obtener los datos:", error);
+        }
+    });
+}
+
+function eliminarRegistro(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar este registro?")) {
         $.ajax({
-            url: "./app/get_students.php", // Corrected URL
-            type: "GET",
-            dataType: "json",
+            url: './app/delete_student.php',
+            method: 'POST',
+            data: { id: id },
             success: function(response) {
-                console.log("Response from server: ", response);
-                if (Array.isArray(response)) {
-                    displayCards(response);
+                if (response.status === 'success') {
+                    alert("Registro eliminado correctamente.");
+                    cargarEstudiantes(); // Volver a cargar la tabla después de eliminar el registro
                 } else {
-                    console.log("Unexpected response format:", response);
-                    document.getElementById("listaEstudiantes").innerHTML = '<p>Error al cargar los usuarios.</p>';
+                    alert("Error al eliminar el registro: " + response.message);
                 }
             },
-            error: function(xhr, status, error) {
-                console.log("Error de conexion: ", error);
-                document.getElementById("listaEstudiantes").innerHTML = '<p>Error al cargar los usuarios.</p>';
-            }
+            
         });
     }
-
-    function init() {
-        searchToDataBase();
-    }
-
-    window.onload = init; 
-});
+}

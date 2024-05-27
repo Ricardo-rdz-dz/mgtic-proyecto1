@@ -69,8 +69,8 @@ function register() {
     let nuevoAlumno = new Estudiante(inputNombre, inputEdad, inputGenero, inputCorreo, inputPassword, inputMateria1, inputMateria2, inputMateria3, inputFacultad);
     if (esValido(nuevoAlumno)) {
         insertToDataBase(nuevoAlumno);
-        // estudiantes.push(nuevoAlumno);
-        // displayCards(); // Llama a esta función para actualizar la visualización de los estudiantes.
+        estudiantes.push(nuevoAlumno);
+        displayCards();
     } else {
         alert("Por favor, completa todos los campos para el registro.");
     }
@@ -96,21 +96,43 @@ function insertToDataBase(nuevoAlumno) {
         success: function(response) {
             console.log(response);
             setTimeout(function() {
-              // Your code to run after the timeout
-              console.log("This runs after a 2-second delay.");
-          }, 2000);
+                // Your code to run after the timeout
+                console.log("This runs after a 2-second delay.");
+            }, 2000);
         },
         error: function(xhr, status, error) {
             console.log("error de conexion");
-            
         }
     });
 }
 
-
-
-// Define displayCards function (assuming you need to display the students somehow)
+// Define displayCards function
 function displayCards() {
-    // Your code to display the students
+    const tableBody = document.querySelector('#tablaEstudiantes tbody');
+    tableBody.innerHTML = ''; // Limpiar el contenido anterior
+    estudiantes.forEach((estudiante, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${estudiante.nombre}</td>
+            <td>${estudiante.edad}</td>
+            <td>${estudiante.genero}</td>
+            <td>${estudiante.correo}</td>
+            <td>${estudiante.facultad}</td>
+            <td><button class="eliminar-btn" onclick="eliminarRegistro(${index})">Eliminar</button></td>
+        `;
+        tableBody.appendChild(row);
+    });
 }
 
+// Eliminar registro
+function eliminarRegistro(index) {
+    estudiantes.splice(index, 1);
+    displayCards();
+}
+
+// Cargar datos iniciales si los hay
+document.addEventListener('DOMContentLoaded', function() {
+    // Aquí puedes cargar los datos iniciales si es necesario
+    // estudiantes = ...
+    displayCards();
+});

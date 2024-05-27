@@ -9,6 +9,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
 }
 
 .container {
@@ -26,6 +27,7 @@ header {
     color: #fff;
     padding: 20px 0;
     width: 100%;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
 .barra-menu {
@@ -60,12 +62,14 @@ header {
 h1, h4 {
     margin: 0;
     padding: 10px 0;
+    text-align: center;
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 label {
@@ -73,7 +77,7 @@ label {
     margin-top: 10px;
 }
 
-input, select {
+input {
     width: 80%; /* Ajusta el ancho de los campos del formulario */
     max-width: 300px; /* Limita el ancho máximo */
     padding: 8px;
@@ -99,7 +103,7 @@ button:hover {
     background-color: #005bb5;
 }
 
-.lista-estudiantes-container {
+.lista-facultades-container {
     background: white;
     margin-top: 20px;
     padding: 10px;
@@ -107,7 +111,7 @@ button:hover {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     width: 100%;
     max-height: 300px;
-    overflow-y: auto;
+    overflow-y: auto; /* Permitir desplazamiento vertical dentro del contenedor */
 }
 
 table {
@@ -141,15 +145,4 @@ button.eliminar-btn {
 
 button.eliminar-btn:hover {
     background-color: #b30000;
-}
-
-footer {
-    background-color: #0073e6;
-    color: #fff;
-    text-align: center;
-    padding: 2px 0; 
-   
-    bottom: 0;
-    width: 100%;
-    min-height: 20px; 
 }

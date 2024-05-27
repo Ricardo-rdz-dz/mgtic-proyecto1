@@ -6,72 +6,88 @@
     <title>Registro de un alumno</title>
     <link rel="stylesheet" href="./styles/registrocss.css">
     <link rel="stylesheet" href="./styles/display.css">
-    
-
 </head>
 <body>
-    <div class="barra-menu">
-    </div>
     <header>
-            
-    <h1>Sistema de Registros</h1>
-     <h4>Registra un alumno nuevo</h4>
-         
-      </Header>
-      <main class="container">
-        <div>
-        <label> Nombre Completo </label>
-        <input type="text" id="txtNombre">
+        <div class="barra-menu">
+            <h1>Sistema de Registros</h1>
+            <nav class="menu">
+                <a href="index.html">Inicio</a>
+                <a href="registro.html">Registro</a>
+                <a href="facultades.html">Registrar Facultad</a>
+                <a href="projects.html">Proyectos</a>
+                <a href="articulos.html">Artículos</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="usuarios.html">Usuarios</a>
+            </nav>
         </div>
-        <div>
-        <label> Edad </label>
-        <input type="number" id="txtEdad">
-        </div>
-        <div>
-            <label> Genero </label>
-            <input type="text" id="txtGenero">
+    </header>
+    <main class="container">
+        <div class="form-container">
+            <div>
+                <label>Nombre Completo</label>
+                <input type="text" id="txtNombre">
             </div>
             <div>
-                <label> Correo</label>
+                <label>Edad</label>
+                <input type="number" id="txtEdad">
+            </div>
+            <div>
+                <label>Género</label>
+                <input type="text" id="txtGenero">
+            </div>
+            <div>
+                <label>Correo</label>
                 <input type="text" id="txtCorreo">
-                </div>
-                <div>
-                    <label> Contraseña </label>
-                    <input type="text" id="txtPassword">
-                    </div>
-                    <div>
-                        <label> Materia 1 </label>
-                        <input type="text" id="txtMateria1">
-                        </div>
-                        <div>
-                            <label> Materia 2 </label>
-                            <input type="text" id="txtMateria2">
-                            </div>
-                            <div>
-                                <label> Materia 3 </label>
-                                <input type="text" id="txtMateria3">
-                                </div>
-                                <div>
-                                    <label for="opciones">Selecciona una opción:</label>
-                                    <select id="Facultad" name="opcion">
-                                        <option value="fca">Facultad Ciencias Administrativas</option>
-                                        <option value="inge">Facultad de Ingenieria</option>
-                                        <option value="idioma">Facultad de Idiomas</option>
-                                        <option value="odonto">Facultad de Odonotologia</option>
-                                      </select>
-                                    </div>
-                               
-
-
-
-
-        <button onclick="register()"> Registrar</button>
-
-        <div id="listaEstudiantes"></div>
-        
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="./scripts/register.js"></script>
-        <script src="./scripts/display.js"></script>
-    
+            </div>
+            <div>
+                <label>Contraseña</label>
+                <input type="password" id="txtPassword">
+            </div>
+            <div>
+                <label>Materia 1</label>
+                <input type="text" id="txtMateria1">
+            </div>
+            <div>
+                <label>Materia 2</label>
+                <input type="text" id="txtMateria2">
+            </div>
+            <div>
+                <label>Materia 3</label>
+                <input type="text" id="txtMateria3">
+            </div>
+            <div>
+                <label for="opciones">Selecciona una opción:</label>
+                <select id="Facultad" name="opcion">
+                    <!-- Las opciones se cargarán dinámicamente -->
+                </select>
+            </div>
+            <button onclick="register()">Registrar</button>
+        </div>
+        <div id="listaEstudiantes" class="lista-estudiantes-container">
+            <table id="tablaEstudiantes">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Género</th>
+                        <th>Correo</th>
+                        <th>Facultad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán los registros dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sistema de Registros. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/display.js"></script>
+    <script src="./scripts/facultades.js"></script> <!-- Añadir esto para cargar las facultades -->
 </body>
 </html>
