@@ -54,6 +54,18 @@ function esValido(unAlumno) {
     return true;
 }
 
+function clearForm() {
+    document.getElementById("txtNombre").value = "";
+    document.getElementById("txtEdad").value = "";
+    document.getElementById("txtGenero").value = "";
+    document.getElementById("txtCorreo").value = "";
+    document.getElementById("txtPassword").value = "";
+    document.getElementById("txtMateria1").value = "";
+    document.getElementById("txtMateria2").value = "";
+    document.getElementById("txtMateria3").value = "";
+    document.getElementById("Facultad").value = "";
+}
+
 // Registrar
 function register() {
     let inputNombre = document.getElementById("txtNombre").value;
@@ -95,13 +107,18 @@ function insertToDataBase(nuevoAlumno) {
         dataType: "json",
         success: function(response) {
             console.log(response);
-            setTimeout(function() {
-                // Your code to run after the timeout
-                console.log("This runs after a 2-second delay.");
-            }, 2000);
+            if (response.success) {
+                alert("Alumno registrado exitosamente.");
+                clearForm();
+                setTimeout(function() {
+                    location.reload(); // Refresh the page after a 1-second delay
+                }, 1000);
+            } else {
+                alert("Error en el registro: " + response.message);
+            }
         },
         error: function(xhr, status, error) {
-            console.log("error de conexion");
+            console.log("Error de conexion");
         }
     });
 }
@@ -130,9 +147,6 @@ function eliminarRegistro(index) {
     displayCards();
 }
 
-// Cargar datos iniciales si los hay
 document.addEventListener('DOMContentLoaded', function() {
-    // Aquí puedes cargar los datos iniciales si es necesario
-    // estudiantes = ...
     displayCards();
 });

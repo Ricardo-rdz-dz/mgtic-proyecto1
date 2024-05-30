@@ -34,7 +34,9 @@ function saveFacultad(facultad) {
                 // Limpia los campos del formulario
                 document.getElementById("txtNombref").value = "";
                 document.getElementById("txtCampus").value = "";
-                cargarFacultades(); // Volver a cargar la lista de facultades
+                setTimeout(function() {
+                    location.reload(); // Refresh the page after a 2-second delay
+                }, 1000);
             } else {
                 alert("Error al registrar la facultad: " + response.message);
             }

@@ -14,7 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         die("Error de conexion con la base de datos: " . $conn->connect_error);
     }
 
-    $query = "SELECT * FROM estudiantes";
+    // Modify query to join with the faculty table
+    $query = "
+        SELECT estudiantes.id, estudiantes.nombre, estudiantes.edad, estudiantes.genero, estudiantes.correo, 
+               estudiantes.password, estudiantes.materia1, estudiantes.materia2, estudiantes.materia3, 
+               facultades.nombre_facultad AS facultad 
+        FROM estudiantes
+        JOIN facultades ON estudiantes.facultad = facultades.id
+    ";
     $result = $conn->query($query);
 
     $students = array();
